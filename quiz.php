@@ -19,6 +19,6 @@ echo "<pre>";
 print_r($question[1]);
 echo "</pre>";
 
-?>
+include ('views/quiz.php');
 
 
