@@ -8,6 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style type="text/css">
+        .container-fluid{
+            margin-top: 5%;
+        }
+
         #qid {
             padding: 10px 15px;
             -moz-border-radius: 50px;

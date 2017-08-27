@@ -13,7 +13,9 @@ if( !is_null($q_answer) && !is_null($q_id) ){
 
 $question = $q->getNextQuestion();
 
-
+//echo "<pre>";
+//print_r($question[2]);
+//echo "</pre>";
 
 
 include ('views/quiz.php');
