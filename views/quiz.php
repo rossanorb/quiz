@@ -182,13 +182,6 @@
             min-height: 205px
         }
 
-        #loadbar {
-            position: absolute;
-            width: 62px;
-            height: 77px;
-            top: 2em
-        }
-
 
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -207,17 +200,18 @@
             </div>
             <div class="modal-body">
                 <div class="quiz" id="quiz" data-toggle="buttons">
+                    <!-- <form name="quiz" method="post" action="quiz.php"> -->
                     <?php
                     $i = 0;
-                    foreach ($question[2] as $options):
+                    foreach ($question[2] as $index => $options):
                     ?>
                         <label class="element-animation<?php echo ++$i; ?> btn btn-lg btn-primary btn-block">
                             <span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span>
-                            <input type="radio" name="q_answer" value="1">
+                            <input type="radio" name="q_answer" value="<?php echo $index; ?>">
                             <?php echo $options; ?>
                         </label>
                     <?php endforeach; ?>
-
+                    <!-- </form> -->
                 </div>
             </div>
             <div class="modal-footer text-muted">
@@ -228,34 +222,11 @@
 </div>
 <script type="text/javascript">
     $(function () {
-        var loading = $('#loadbar').hide();
-        $(document)
-            .ajaxStart(function () {
-                loading.show();
-            }).ajaxStop(function () {
-            loading.hide();
-        });
 
         $("label.btn").on('click', function () {
-            var choice = $(this).find('input:radio').val();
-            $('#loadbar').show();
-            $('#quiz').fadeOut();
-            setTimeout(function () {
-                $("#answer").html($(this).checking(choice));
-                $('#quiz').show();
-                $('#loadbar').fadeOut();
-                /* something else */
-            }, 1500);
+            $('')
         });
 
-        $ans = 3;
-
-        $.fn.checking = function (ck) {
-            if (ck != $ans)
-                return 'INCORRECT';
-            else
-                return 'CORRECT';
-        };
     });
 </script>
 </body>
