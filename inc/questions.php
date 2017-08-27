@@ -1,6 +1,7 @@
 <?php
 $questions = [
     1 => [
+        1,
         'De manhã, você:',
         [
             'a' => 'Acorda cedo e come frutas cortadas metodicamente',
@@ -11,6 +12,7 @@ $questions = [
         ]
     ],
     2 => [
+        2,
         'Indo para o trabalho você encontra uma senhora idosa caída na rua',
         [
             'a' => 'Ela vai atrapalhar seu horário. Oculte o corpo',
@@ -21,6 +23,7 @@ $questions = [
         ]
     ],
     3 => [
+        3,
         'Chega no prédio e o elevador está cheio',
         [
             'a' => 'Convence parte das pessoas a esperarem o próximo',
@@ -31,6 +34,7 @@ $questions = [
         ]
     ],
     4 => [
+        4,
         'Você chega no trabalho e as convenções sociais te obrigam a puxar assunto',
         [
             'a' => 'Fala sobre a política, eleições, como tudo é um absurdo',
@@ -41,6 +45,7 @@ $questions = [
         ]
     ],
     5 => [
+        5,
         'A pauta pegou o dia todo, mas você está indo para casa',
         [
             'a' => 'Vou chamar aqui o meu Uber',
