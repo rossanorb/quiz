@@ -212,10 +212,12 @@
                     ?>
                         <label class="element-animation<?php echo ++$i; ?> btn btn-lg btn-primary btn-block">
                             <span class="btn-label"><i class="glyphicon glyphicon-chevron-right"></i></span>
-                            <input type="radio" name="q_answer" value="<?php echo $index; ?>">
+                            <input type="radio"  value="<?php echo $index; ?>">
                             <?php echo $options; ?>
                         </label>
                     <?php endforeach; ?>
+                    <input type="hidden" id="q_answer" name="q_answer" value="">
+                    <input type="hidden" id="q_id" name="q_id" value="<?php echo $question[0]; ?>">
                     </form>
                 </div>
             </div>
@@ -227,11 +229,11 @@
 </div>
 <script type="text/javascript">
     $(function () {
-
         $("label.btn").on('click', function () {
-            $('')
+            let opt = $(this).find('input[type="radio"]').val();
+            $('#q_answer').val( opt );
+            $('form').submit();
         });
-
     });
 </script>
 </body>
