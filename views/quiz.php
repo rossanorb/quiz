@@ -182,6 +182,11 @@
             min-height: 205px
         }
 
+        .btn input[type="radio"]{
+            position: absolute;
+            clip: rect(0,0,0,0);
+            pointer-events: none;
+        }
 
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -199,8 +204,8 @@
                 </h3>
             </div>
             <div class="modal-body">
-                <div class="quiz" id="quiz" data-toggle="buttons">
-                    <!-- <form name="quiz" method="post" action="quiz.php"> -->
+                <div class="quiz" id="quiz" >
+                    <form name="quiz" method="post" action="quiz.php">
                     <?php
                     $i = 0;
                     foreach ($question[2] as $index => $options):
@@ -211,7 +216,7 @@
                             <?php echo $options; ?>
                         </label>
                     <?php endforeach; ?>
-                    <!-- </form> -->
+                    </form>
                 </div>
             </div>
             <div class="modal-footer text-muted">
