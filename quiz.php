@@ -1,11 +1,11 @@
 <?php
-include('inc/questions.php');
+include('inc/config.php');
 include ('Questions.php');
 
 $q_answer = isset($_POST['q_answer']) ? $_POST['q_answer'] : null;
 $q_id = isset($_POST['q_id']) ? $_POST['q_id'] : null;
 
-$q = new Questions($questions);
+$q = new Questions($questions, $series);
 
 if( !is_null($q_answer) && !is_null($q_id) ){
     $q->setAnswer($q_id, $q_answer);
@@ -13,9 +13,15 @@ if( !is_null($q_answer) && !is_null($q_id) ){
 
 $question = $q->getNextQuestion();
 
-//echo "<pre>";
-//print_r($question[2]);
-//echo "</pre>";
+if(!$question){
+    $result = $q->getResult();
+    echo $result;
+    session_destroy();
+    die();
+    //header("Location: index.php");
+}
+
+
 
 
 include ('views/quiz.php');

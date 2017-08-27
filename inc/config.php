@@ -56,3 +56,11 @@ $questions = [
         ]
     ]
 ];
+
+$series = [
+    'a' => 'House of Cards',
+    'b' => 'Game of Thrones',
+    'c' => 'Lost',
+    'd' => 'Breaking Bad',
+    'e' => 'Silicon Valley'
+];
