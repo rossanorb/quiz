@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="robots" content="noindex, nofollow">
 
-    <title>Modal Quiz with Radio button - Bootsnipp.com</title>
+    <title>Quiz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style type="text/css">
@@ -209,7 +209,7 @@
             </div>
             <div class="modal-body">
                 <div class="quiz" id="quiz" >
-                    <form name="quiz" method="post" action="quiz.php">
+                    <form name="quiz" method="post" action="/">
                     <?php
                     $i = 0;
                     foreach ($question[2] as $index => $options):

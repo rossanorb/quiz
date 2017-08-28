@@ -6,7 +6,6 @@ class Questions{
     private $series = [];
 
     public function __construct(array $questions, array  $series){
-        session_start();
         $this->questions = $questions;
         $this->series = $series;
     }
@@ -50,7 +49,7 @@ class Questions{
         foreach ($answers as $ind => $v){
             if($max == $v) $c++;
         }
-        
+
         if($c > 1){
             $indice = $_SESSION['answers'][5];
             return $this->series[$indice];

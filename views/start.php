@@ -15,9 +15,12 @@
 <body>
 <div class="container">
     <div class="jumbotron">
-        <h1><?php echo $result['serie']; ?></h1>
-        <p><?php echo $result['msg']; ?></p>
-        <p><a class="btn btn-lg btn-success" href="/" role="button">Refazer Teste</a></p>
+        <h1>Em um dia, que s&eacute;rie melhor representa voc&ecirc;</h1>
+        <form method="post" name="form" action="/">
+            <p><input type="submit"  class="btn btn-lg btn-success" value="Iniciar Teste"></p>
+            <input type="hidden" name="start" value="true">
+        </form>
+
     </div>
 </div>
 </body>

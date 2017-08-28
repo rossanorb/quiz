@@ -1,23 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Bootstrap Example</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<style>
-        .jumbotron{margin-top: 10%;}
-        .jumbotron h1 {text-align: center;}
-        .jumbotron p {text-align: center};
+<?php
+include('inc/config.php');
+include ('Questions.php');
 
-    </style>
-</head>
-<body>
-<div class="container">
-	<div class="jumbotron">
-		<h1>Em um dia, que s&eacute;rie melhor representa voc&ecirc;</h1>
-		<p><a class="btn btn-lg btn-success" href="/quiz.php" role="button">Iniciar Teste</a></p>
-	</div>
-</div>
-</body>
-</html>
+session_start();
+
+$q_answer = isset($_POST['q_answer']) ? $_POST['q_answer'] : null;
+$q_id = isset($_POST['q_id']) ? $_POST['q_id'] : null;
+
+if(@$_SESSION['start'] == false){
+    $_SESSION['start'] = isset($_POST['start']) ? $_POST['start'] : false;
+}
+
+if($_SESSION['start']){
+    $q = new Questions($questions, $series);
+
+    if( !is_null($q_answer) && !is_null($q_id) ){
+        $q->setAnswer($q_id, $q_answer);
+    }
+
+    $question = $q->getNextQuestion();
+
+    if(!$question){
+        $result = $q->getResult();
+        $_SESSION['answers'] = null;
+        include ('views/result.php');
+    }else{
+        include ('views/quiz.php');
+    }
+}else{
+    include ('views/start.php');
+}
