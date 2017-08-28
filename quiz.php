@@ -14,26 +14,9 @@ if( !is_null($q_answer) && !is_null($q_id) ){
 $question = $q->getNextQuestion();
 
 if(!$question){
-    $result = $q->getResult();
-    echo $result;
+    $result = $q->getResult();    
     session_destroy();
-    die();
-    //header("Location: index.php");
+    include ('views/result.php');
+}else{
+    include ('views/quiz.php');    
 }
-
-
-
-
-include ('views/quiz.php');
-
-
-//$pergunta = @$_SESSION["question"] ?: 0 ;
-//$pergunta++;
-//$_SESSION["question"] = $pergunta;
-//echo $pergunta;
-
-
-
-
-
-

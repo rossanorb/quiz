@@ -58,9 +58,9 @@ $questions = [
 ];
 
 $series = [
-    'a' => 'House of Cards',
-    'b' => 'Game of Thrones',
-    'c' => 'Lost',
-    'd' => 'Breaking Bad',
-    'e' => 'Silicon Valley'
+    'a' => ['serie'=>'House of Cards', 'msg'=>'Você é House of Cards: ataca o problema com método e faz de tudo para resolver a situação.'],
+    'b' => ['serie'=>'Game of Thrones', 'msg'=>'Você é Game of Thrones: não tem muita delicadeza nas ações, mas resolve o problema de forma prática.'],
+    'c' => ['serie'=>'Lost', 'msg'=>'Você é Lost: faz as coisas sem ter total certeza se é o caminho certo ou se faz sentido, mas no final dá tudo certo.'],
+    'd' => ['serie'=>'Breaking Bad', 'msg'=>'Você é Breaking Bad: pra fazer acontecer você toma a liderança, mas sempre contando com seus parceiros.'],
+    'e' => ['serie'=>'Silicon Valley', 'msg'=>'Você é Silicon Valley: vive a tecnologia o tempo todo e faz disso um mantra para cada situação no dia.']
 ];
