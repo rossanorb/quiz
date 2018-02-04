@@ -37,11 +37,6 @@ class QuestionsTest  extends PHPUnit_Framework_TestCase{
         $q->setAnswer(5, 'a');
         $this->assertEquals($_SESSION['answers'][5], 'a');
 
-
-        //echo '<pre>';
-        //print_r($_SESSION['answers']);
-        //echo '</pre>';
-
         $this->assertEquals(count(array_filter($_SESSION['answers'], function($var){
             return ($var == 'd');
         })),2);
