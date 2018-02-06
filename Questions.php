@@ -44,21 +44,13 @@ class Questions{
     public function getResult(){
         $answers = array_count_values($_SESSION['answers']);
         $max = max($answers);
-        $c = 0;
+        $answers = array_filter($answers, function($var) use ($max){
+            return ($max == $var);
+        });
 
-        foreach ($answers as $ind => $v){
-            if($max == $v) $c++;
-        }
-
-        if($c > 1){
-            $indice = $_SESSION['answers'][5];
-            return $this->series[$indice];
-        }else{
-            $indice = array_flip($answers)[$max];
-            return $this->series[$indice];
-        }
-
+        ksort($answers);
+        $answers = array_reverse($answers);
+        return ($this->series[key($answers)]);
     }
-
 
 }

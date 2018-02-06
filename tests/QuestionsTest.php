@@ -56,6 +56,71 @@ class QuestionsTest  extends PHPUnit_Framework_TestCase{
     }
 
 
+    public function testAnswers1(){
+        $config = $this->config();
+        $q = new Questions($config['questions'], $config['series']);
+
+        $test = ['a','b','c','d','e'];
+        for($i=0; $i < 5; $i++){
+            $q->getNextQuestion();
+            $q->setAnswer($i, $test[$i]);
+        }
+        $result = $q->getResult();
+        $this->assertEquals('Silicon Valley',$result['serie']);
+    }
+
+    public function testAnswers2(){
+        $config = $this->config();
+        $q = new Questions($config['questions'], $config['series']);
+
+        $test = ['a','b','a','c','b'];
+        for($i=0; $i < 5; $i++){
+            $q->getNextQuestion();
+            $q->setAnswer($i, $test[$i]);
+        }
+        $result = $q->getResult();
+        $this->assertEquals('Game of Thrones',$result['serie']);
+    }
+
+    public function testAnswers4(){
+        $config = $this->config();
+        $q = new Questions($config['questions'], $config['series']);
+
+        $test = ['a','a','a','b','b'];
+        for($i=0; $i < 5; $i++){
+            $q->getNextQuestion();
+            $q->setAnswer($i, $test[$i]);
+        }
+        $result = $q->getResult();
+        $this->assertEquals('House of Cards',$result['serie']);
+    }
+
+    public function testAnswers5(){
+        $config = $this->config();
+        $q = new Questions($config['questions'], $config['series']);
+
+        $test = ['d','e','c','c','d'];
+        for($i=0; $i < 5; $i++){
+            $q->getNextQuestion();
+            $q->setAnswer($i, $test[$i]);
+        }
+        $result = $q->getResult();
+        $this->assertEquals('Breaking Bad',$result['serie']);
+    }
+
+    public function testAnswers6(){
+        $config = $this->config();
+        $q = new Questions($config['questions'], $config['series']);
+
+        $test = ['c','a','a','b','c'];
+        for($i=0; $i < 5; $i++){
+            $q->getNextQuestion();
+            $q->setAnswer($i, $test[$i]);
+        }
+        $result = $q->getResult();
+        $this->assertEquals('Lost',$result['serie']);
+    }
+
 
 
     private function config(){
